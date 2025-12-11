@@ -1,0 +1,48 @@
+﻿<Window x:Class="password_manager.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Password Manager" Height="500" Width="800" Background="#222831" FontFamily="Arial">
+    <Grid Margin="10">
+        <StackPanel>
+            <!-- Панель поиска -->
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <StackPanel>
+                    <Label Content="По названию"/>
+                    <TextBox x:Name="SearchTitleBox" Width="200" Margin="0 0 10 0"
+                             TextChanged="Search_TextChanged"/>
+                </StackPanel>
+                <StackPanel>
+                    <Label Content="По категории"/>
+                    <TextBox x:Name="SearchCategoryBox" Width="200" Margin="0 0 10 0"
+                             TextChanged="Search_TextChanged"/>
+                </StackPanel>
+                <Button Content="Показать/Скрыть пароли" Width="150" Click="TogglePasswords_Click"/>
+            </StackPanel>
+
+            <!-- Список записей -->
+            <ListView x:Name="ListEntries" Height="350" Margin="0 0 0 10">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Название" Width="200" DisplayMemberBinding="{Binding Title}"/>
+                        <GridViewColumn Header="Логин" Width="150" DisplayMemberBinding="{Binding Username}"/>
+                        <GridViewColumn Header="Пароль" Width="150">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding DisplayPassword}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Категория" Width="100" DisplayMemberBinding="{Binding Category}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <!-- Кнопки действий -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Добавить" Width="120" Margin="0 0 10 0" Click="Add_Click"/>
+                <Button Content="Редактировать" Width="120" Margin="0 0 10 0" Click="Edit_Click"/>
+                <Button Content="Удалить" Width="120" Click="Delete_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

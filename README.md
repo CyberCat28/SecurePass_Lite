@@ -8,4 +8,5 @@
 <img width="833" height="493" alt="image" src="https://github.com/user-attachments/assets/cec60e7e-c6dc-4b45-86e8-f3e7ce6dd4c1" />
 <img width="833" height="493" alt="image" src="https://github.com/user-attachments/assets/571162e9-05b1-4787-a624-4e0e5bf3573a" />
 <img width="833" height="493" alt="image" src="https://github.com/user-attachments/assets/653ccbb8-5e8d-4de0-9381-6a38bb1c95d1" />
+<img width="527" height="353" alt="Снимок экрана 2025-12-12 165928" src="https://github.com/user-attachments/assets/c857e890-d5f2-4ed4-b3e5-498689482054" />
 <img width="833" height="493" alt="image" src="https://github.com/user-attachments/assets/ecd43328-fa6b-4b61-b238-8a4263756da2" />

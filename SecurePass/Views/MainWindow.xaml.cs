@@ -83,5 +83,10 @@ namespace password_manager.Views
             }
             ListEntries.Items.Refresh();
         }
+
+        private void ListEntries_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

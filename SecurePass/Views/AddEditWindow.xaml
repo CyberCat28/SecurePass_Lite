@@ -1,7 +1,7 @@
 ﻿<Window x:Class="password_manager.Views.AddEditWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Редактировать" Width="541" Height="550">
+        Title="Редактировать" Width="541" Height="360" Background="#222831" FontFamily="Rockwell" Foreground="#FFEEEEEE">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -9,54 +9,73 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto" MinHeight="35.195"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Margin="0 5">
+        <StackPanel Grid.Row="0" Margin="0 5 0 5">
             <TextBlock Text="Название"/>
-            <TextBox x:Name="TitleBox"/>
+            <TextBox x:Name="TitleBox" BorderBrush="{x:Null}" Background="#393E46" Foreground="#FFEEEEEE"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Margin="0 5">
+        <StackPanel Grid.Row="1" Margin="0 5 0 5">
             <TextBlock Text="Логин"/>
-            <TextBox x:Name="UserBox"/>
+            <TextBox x:Name="UserBox" BorderBrush="{x:Null}" Background="#393E46" Foreground="#FFEEEEEE"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Margin="0 5">
+        <StackPanel Grid.Row="2" Margin="0 5 0 5">
             <TextBlock Text="Пароль"/>
             <Grid>
-                <PasswordBox x:Name="PassBox" Visibility="Visible" Margin="0,0,179,0"/>
-                <TextBox x:Name="PassTextBox" Visibility="Collapsed" Width="250"/>
-                <Button Content="Посмотреть" Width="164" HorizontalAlignment="Left" Click="TogglePassword_Click" Margin="332,0,0,0"/>
+                <PasswordBox x:Name="PassBox" Visibility="Visible" BorderBrush="{x:Null}" Background="#393E46" Foreground="#FFEEEEEE"/>
+                <TextBox x:Name="PassTextBox" Visibility="Collapsed" BorderBrush="{x:Null}" Background="#393E46" Foreground="#FFEEEEEE"/>
             </Grid>
-            <StackPanel Orientation="Horizontal" Margin="0 5">
-                <Button Content="Сгенерировать" Width="120" Click="Generate_Click"/>
-                <Button Content="Копировать" Width="117" Margin="5 0 0 0" Click="Copy_Click"/>
+            <StackPanel Orientation="Horizontal" Margin="0 5" Height="24">
+                <Button Content="Сгенерировать" Width="100" Click="Generate_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="13"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Content="Копировать" Width="85" Margin="5 0 0 0" Click="Copy_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="13"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Content="Посмотреть" Width="85" Margin="5 0 0 0" Click="TogglePassword_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="13"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0 5" VerticalAlignment="Center">
                 <TextBlock Text="Длина:" VerticalAlignment="Center" Margin="0 0 5 0"/>
-                <Slider x:Name="LengthSlider" Minimum="8" Maximum="16" Value="12" Width="150" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                <Slider x:Name="LengthSlider" Minimum="8" Maximum="16" Value="12" Width="150" TickFrequency="1" IsSnapToTickEnabled="True" BorderBrush="{x:Null}"/>
                 <TextBlock Text="{Binding ElementName=LengthSlider, Path=Value}" VerticalAlignment="Center" Margin="5 0 0 0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0 5" VerticalAlignment="Center">
                 <TextBlock Text="Включить:" VerticalAlignment="Center" Margin="0 0 5 0"/>
-                <CheckBox x:Name="UpperCheck" Content="Большие буквы" IsChecked="True" Margin="5 0"/>
-                <CheckBox x:Name="LowerCheck" Content="Маленькие буквы" IsChecked="True" Margin="5 0"/>
-                <CheckBox x:Name="DigitsCheck" Content="Цифры" IsChecked="True" Margin="5 0"/>
+                <CheckBox x:Name="UpperCheck" Content="Большие буквы" IsChecked="True" Margin="5 0" Foreground="#FFEEEEEE"/>
+                <CheckBox x:Name="LowerCheck" Content="Маленькие буквы" IsChecked="True" Margin="5 0" Foreground="#FFEEEEEE"/>
+                <CheckBox x:Name="DigitsCheck" Content="Цифры" IsChecked="True" Margin="5 0" Foreground="#FFEEEEEE"/>
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Grid.Row="3" Margin="0 5">
+        <StackPanel Grid.Row="3" Margin="0,5,0,5">
             <TextBlock Text="Категория"/>
-            <TextBox x:Name="CategoryBox"/>
+            <TextBox x:Name="CategoryBox" BorderBrush="{x:Null}" Background="#393E46" Foreground="#FFEEEEEE"/>
         </StackPanel>
 
-        <Button Grid.Row="6"
-                Content="Сохранить"
-                Width="120"
-                HorizontalAlignment="Right"
-                Margin="0 10 0 0"
-                Click="Save_Click"/>
+        <Button Grid.Row="6" Content="Сохранить" Width="79" HorizontalAlignment="Right" Margin="0,13,0,0" Click="Save_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>
